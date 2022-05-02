@@ -1,7 +1,8 @@
-import react, { useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import { dogsAll } from '../actions'
+import { getdogsAll } from '../actions/actions';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,12 +12,12 @@ export default function Home(){
     const dogsAll = useSelector((state) => state.dogs) // trae todo lo que esta en el estado de dogs
 
     useEffect(()=>{
-        dispatch(dogsAll())
-    }, [])
+        dispatch(getdogsAll())
+    }, [dispatch])
 
     function handleButton(e){
         e.preventDefault();   // evita que se recargue la pagina al hacer click
-        dispatch(dogsAll())
+        dispatch(getdogsAll());
     }
 
     return (
@@ -26,10 +27,34 @@ export default function Home(){
         <button onClick={e =>{handleButton(e)}}>
             Cargar de nuevo los perros
         </button>
+
         <div>
-        
+            <select>
+                <option value='Alfabetico A-Z'>Alfabetico A-Z</option>
+                <option value= 'Alfabetico Z-A'>Alfabetico Z-A</option>
+                <option value= 'Peso asc'>Pero ascendente</option>
+                <option value= 'Peso desc'>Pero descendente</option>
+            </select>
+
+            <select>
+                <option value='Creados'>Creados</option>
+                <option value='Todos'>Todos</option>
+            </select>
+
+            {
+                dogsAll?.map( (e) =>{
+                    return (
+                        <Fragment className= 'cards' >
+                            <Link to={'/Home/' + e.id}>
+                                <Card name={e.name} image={e.img} temperament={e.temperament} key={e.id} />
+                            </Link>
+                        </Fragment>
+                    )
+                })
+            }
+
         </div>
 
-                 </div>
+     </div>
     )
 }

@@ -1,17 +1,19 @@
-initialState = {
-    creados: [],
-    filtrados: [],
+const initialState = {
+    dogs: []
 
 }
 
 function rootReducer (state = initialState, action){
     switch(action.type){
-        case "FILTRO_RAZA_NOMBRE" :
+        case "GET_DOGSALL" :
             return {
                 ...state,
-                filtrados: action.payload
+               dogs: action.payload
             }
-    }
+
+            default : 
+            return state;
+    }   
 
 };
 
