@@ -1,15 +1,17 @@
 import './App.css';
-import {  Route } from 'react-router-dom'
-import  Landing  from './components/Landing'
-import PagePrincipal from './components/PagePrincipal'
+import { Route } from 'react-router-dom';
+import Form from "./Components/Form";
+import PrincipalPage from './Components/PrincipalPage';
+import PrincipalRoute from './Components/PrincipalRoute';
+import CardDetail from './Components/CardDetail';
 
 function App() {
   return (
     <div className="App">
-     
-    <Route exact path='/' component = {Landing} />
-    <Route path= '/Home' component = {PagePrincipal} />
-     
+      <Route exact path='/' component={PrincipalPage} />
+      <Route exact path='/principal' component={PrincipalRoute} />
+      <Route exact path='/principal/form' component={Form} />
+      <Route exact path='/description/:id' render={({match}) => <CardDetail match={match} /> }/>
     </div>
   );
 }

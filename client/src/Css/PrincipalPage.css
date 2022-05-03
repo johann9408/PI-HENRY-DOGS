@@ -1,9 +1,10 @@
 .h1{
-    color: cornsilk;
+    color: rgb(255, 255, 253);
     margin-top: 60px;
     margin-left: 80px;
     font-size: 60px;
     position: center;
+    font-family: sans-serif;
 }
 
 .but{
@@ -12,12 +13,13 @@
     margin-top: 250px;
     border-radius: 10px;
     border-color: teal;
-    color: #ffffff;
+    color: #f3e5e5;
     cursor: pointer;
     padding: 10px;
     background-color: transparent;
     font-size: 1rem;
     transition: box-shadow 0.2s ease-in-out;
+    
 }
 
 .but:hover{
@@ -28,12 +30,11 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('./Imagenes/dogs.jpg.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+     background: linear-gradient(
+        90deg,
+      #333333, #121212
+    );
+  
 }
 
 .principal{
@@ -42,3 +43,16 @@ body{
     align-items: flex-start;
     height: 500px;
 }
+
+.img{
+    width: 500px;
+    height: 600px;
+    position: fixed;
+    left: 600px;
+    top: 100px;
+    border-radius: 20px;
+    box-shadow: 3px 5px 5px #333333
+}
+
+
+

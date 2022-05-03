@@ -1,0 +1,29 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.headersP{
+    color: rgb(255, 255, 255);
+}
+
+.selects{
+    position: relative;
+    background-color: black;
+    color: #fff;
+    border: thin solid rgb(7, 1, 1);
+    border-radius: 4px;
+    /* border-color: teal; */
+}
+
+.selects option{
+    color: #fff;
+}
+
+.selects:focus{
+    border: 3px solid teal;
+    /* transform: translateY(-4%); */
+    transition: all 0.3s ease;
+}
+

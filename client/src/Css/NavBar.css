@@ -1,0 +1,81 @@
+.nav{
+    height: 90px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        90deg,
+      /*   #DD95F7 0%, #9AADF9 50%, #7FC */
+      #121212, #333333
+    );
+}
+
+.label{
+    font-family: serif;
+    font-size: 50px;
+    color: rgb(255, 255, 253);
+    margin-left: 80px;
+    position: center;
+   
+}
+
+.subNav{
+    width: 700px;
+    height: 90px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(
+        90deg,
+      /*   #DD95F7 0%, #9AADF9 50%, #7FC */
+      #121212, #333333
+    );
+}
+
+.styleM{
+    width: 250px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 5px;
+    outline: 0px;
+    color: #fff;
+    background: none;
+    border-color: black;
+}
+
+.styleM:focus{
+    border: 3px solid teal;
+    /* transform: translateY(-4%); */
+    transition: all 0.3s ease;
+}
+
+.butto{
+    height: 37px;
+    background: none;
+    border: none;
+}
+
+.butto:hover{
+    cursor: pointer;
+}
+
+.buttCreate{
+    width: 150px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 5px;
+    outline: 0px;
+    color: #fff;
+    background: none;
+    border-color: black;
+}
+
+.buttCreate:hover{
+    box-shadow: 0 0 40px rgb(25, 23, 23) inset;
+    cursor: pointer;
+    /* border-color: teal; */
+}
+
+.styleM::placeholder{
+    color: #fff
+}

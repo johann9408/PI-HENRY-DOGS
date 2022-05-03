@@ -5,52 +5,27 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('dog', {
     id: {
-      type : DataTypes.UUID,  // Genera un id random con numeros y letras.
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,      // allowNull false, significa que no debe de estar vacio, requiere un valor
+      type: DataTypes.UUID,
+      allowNull: false,
       primaryKey: true
     },
-
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      
     },
-
-
-    height:{
-      type: DataTypes.JSON,      // almacena datos tipo JSON.
-      allowNull: false,
-      
+    life_span: {
+      type: DataTypes.STRING
     },
-
-    weight:{
-      type: DataTypes.JSON,
-      allowNull: false,
-      
-    },
-
-    year: {
+    weight: {
       type: DataTypes.STRING,
-      allowNull : true
+      allowNull: false
     },
-
-    /* image: {
+    height: {
       type: DataTypes.STRING,
-      defaultValue: "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/6/2021/03/baltimore-dog-parks-1.jpg",
-      validate:{
-        isUrl: true
-      }
-    }, */
-
-    createDb:{
-      type: DataTypes.BOOLEAN,    // Hace el llamado a la base de datos, y omite a la api
-      defaultValue: true,  
+      allowNull: false
     },
-    },
-    {
-      timestamps : false
+    image: {
+      type: DataTypes.STRING(100000)
     }
-    
-    );
+  });
 };

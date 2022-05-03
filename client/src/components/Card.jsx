@@ -1,12 +1,23 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+import '../Css/Card.css';
+import { Fragment } from 'react';
 
-export default function Card ({name, image, temperament}){
+function Card({image, name, id}){
+
+    if(image.url){
+        image=image.url
+    }
+
     return (
-        <div>
-             <h3>{name}</h3>
-                 <h5>{temperament}</h5>
-                     <img src={image} alt ='img not found' width= '200px' height='250px' />
-        </div>
-    );
+        <Fragment>
+        <span className="espacio">
+            <Link to={`/description/${id}`}>
+                <span className="columnas"><img src={image} alt="no se encontró" style={{width: "190px", height: "190px"}} /></span>
+            </Link><br />
+            <label className="label1">Nombre:</label> <span className="label1">{name}</span> <br /> <br />
+        </span>
+        </Fragment>
+    )
 }
 
+export default Card;
